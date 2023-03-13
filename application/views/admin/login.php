@@ -31,12 +31,6 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin_lte_assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
 </head>
 
 <body class="hold-transition login-page">
@@ -48,32 +42,9 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="<?= base_url('admin/login') ?>" method="post">
-    <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email" name="email">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-    </div>
-    <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" name="password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-    </div>
-    <div class="row">
-        <div class="col-xs-8">
-            <div class="checkbox icheck">
-                <label>
-                    <input type="checkbox"> Remember Me
-                </label>
-            </div>
-        </div>
-        <!-- /.col -->
-        <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat" name="submit">Sign In</button>
-        </div>
-        <!-- /.col -->
-    </div>
-</form>
+ 
 
-<!-- <form action="<?= base_url('admin/login'); ?>" method="post">
+<form action="<?= base_url('admin/login'); ?>" method="post">
     <div class="form-group">
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
@@ -83,7 +54,7 @@
         <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
-</form> -->
+</form>
 
 
     <div class="social-auth-links text-center">

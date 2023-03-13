@@ -7,5 +7,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 // Admin routes
 $route['admin'] = 'admin/index';
+$route['admin/register'] = 'admin/register';
 $route['admin/login'] = 'admin/login';
 $route['admin/logout'] = 'admin/logout';
+
