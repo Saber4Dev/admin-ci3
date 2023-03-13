@@ -69,25 +69,27 @@ class Admin extends CI_Controller {
         if ($this->session->userdata('logged_in')) {
             redirect('admin/index');
         }
-
+    
         $data['title'] = 'Register';
-        
+    
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
         $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]');
-        
+    
         if ($this->form_validation->run() === FALSE) {
             $this->load->view('admin/register', $data);
         } else {
             $name = $this->input->post('name');
             $email = $this->input->post('email');
             $password = md5($this->input->post('password'));
-            
+    
             $this->Users_model->register($name, $email, $password);
-            
+    
             $this->session->set_flashdata('success', 'You have successfully registered. Please login.');
-            redirect('auth/login');
+            redirect('admin/login');
         }
     }
+    
+    
 }
