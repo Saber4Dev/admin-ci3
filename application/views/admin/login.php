@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title><?php echo $title; ?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -45,15 +45,31 @@
  
 
 <form action="<?= base_url('admin/login'); ?>" method="post">
-    <div class="form-group">
-        <label for="email">Email:</label>
+    <div class="form-group has-feedback">
+        
         <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
     </div>
-    <div class="form-group">
-        <label for="password">Password:</label>
+    <div class="form-group has-feedback">
+       
         <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> Remember Me
+            </label>
+          </div>
+        </div>
+
+        <div class="col-xs-4">
+        <button type="submit" class="btn btn-primary btn-block btn-flat"">Login</button>
+
+        </div>
+      </div>
+    
 </form>
 
 
@@ -67,7 +83,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">I forgot my password</a><br>
-    <a href="register.html" class="text-center">Register a new membership</a>
+    <a href="<?php echo base_url('admin/register'); ?>" class="text-center">Register a new membership</a>
 
   </div>
   <!-- /.login-box-body -->

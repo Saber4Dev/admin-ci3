@@ -78,7 +78,7 @@ class Admin extends CI_Controller {
         $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]');
         
         if ($this->form_validation->run() === FALSE) {
-            $this->load->view('register', $data);
+            $this->load->view('admin/register', $data);
         } else {
             $name = $this->input->post('name');
             $email = $this->input->post('email');
