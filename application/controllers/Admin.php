@@ -23,6 +23,8 @@ class Admin extends CI_Controller {
             redirect('admin/login');
         }
 
+        $data['title'] = 'Home';
+
         // Load the dashboard view
         $this->load_common_views('dashboard');
     }
