@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>DD</title>
+  <title>Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -36,7 +36,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="<?php echo base_url('admin/index'); ?>" class="logo" id="dashboard-link">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -247,18 +247,20 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url(); ?>assets/admin_lte_assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+            <img src="<?php echo base_url(); ?><?php echo $user_data['avatar'] ?? 'assets/admin_lte_assets/dist/img/user2-160x160.jpg'; ?>" class="img-circle" alt="User Image">
+
+              <span class="hidden-xs"><?php echo $user_data['name']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url(); ?>assets/admin_lte_assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="<?php echo base_url(); ?><?php echo $user_data['avatar'] ?? 'assets/admin_lte_assets/dist/img/user2-160x160.jpg'; ?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
+                  <?php echo $user_data['name']; ?> - <?php echo ($user_data['is_admin']) ? 'admin' : 'user'; ?>
+                  <small>Member since <?php echo date('M Y', strtotime($user_data['created_at'])); ?></small>
+              </p>
+
               </li>
               <!-- Menu Body -->
               <li class="user-body">
@@ -277,9 +279,10 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <div class="pull-left" >
+                      <a href="<?php echo base_url('admin/profile'); ?>" id="profile-link" class="btn btn-default btn-flat">Profile</a>
                 </div>
+
                 <div class="pull-right">
                   <a href="<?php echo base_url('admin/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
                     </div>

@@ -10,31 +10,79 @@ class Admin extends CI_Controller {
         $this->load->library('form_validation');
     }
 
+    // This function loads the common views used by most pages in the admin panel
     private function load_common_views($view_name, $data = array()) {
+        $user_data = $this->get_current_user_data(); // Get the current user's data
+    
+        // Add the user data to the $data array
+        $data['user_data'] = $user_data;
+        
         $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/templates/menu', $data);
+        $this->load->view('admin/templates/sidebar', $data);
         $this->load->view('admin/' . $view_name, $data);
         $this->load->view('admin/templates/footer', $data);
     }
 
-    public function index() {
+    // This function checks if the user is logged in
+    private function check_login_status() {
         // Redirect to the login page if the user is not logged in
         if (!$this->session->userdata('logged_in')) {
             redirect('admin/login');
         }
+    }
+    
+    // This function loads the dashboard page
+    public function index() {
+        $this->check_login_status();
+        
+        // Get the current user's data
+        $user_data = $this->get_current_user_data();
+    
+        // Load the dashboard view with the user data
+        $this->load_common_views('dashboard', $user_data);
+    }
+    
+    // This function loads the profile page
+    public function profile() {
+        $this->check_login_status();
 
-        $data['title'] = 'Home';
+        // Get the current user's data
+        $user_data = $this->get_current_user_data();
 
-        // Load the dashboard view
-        $this->load_common_views('dashboard');
+        // Load the profile view with the user data
+        $this->load_common_views('profile', $user_data);
     }
 
+    // This function fetches the current user's data from the database
+    private function get_current_user_data() {
+        $user_id = $this->session->userdata('user_id');
+        return $this->Users_model->get_user_data($user_id);
+
+        // Check if the current user is an admin
+        if ($user_data['is_admin'] == 1) {
+            $user_data['is_admin'] = true;
+        } else {
+            $user_data['is_admin'] = false;
+        }
+
+        return $user_data;
+    }
+
+    // This function requires the user to be logged in before accessing the page
+    private function require_login() {
+        // Redirect to the login page if the user is not logged in
+        if (!$this->session->userdata('logged_in')) {
+            redirect('admin/login');
+        }
+    }
+    
+    // This function loads the login page
     public function login() {
         // Redirect to dashboard if user is already logged in
         if ($this->session->userdata('logged_in')) {
             redirect('admin/index');
         }
-
+    
         $data['title'] = 'Login';
         
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
@@ -56,21 +104,20 @@ class Admin extends CI_Controller {
             }
         }
     }
-
     
-
+    // This function logs the user out
     public function logout() {
         $this->session->unset_userdata('logged_in');
         $this->session->unset_userdata('user_id');
+
+        // Destroy session and redirect to login page
+       
         redirect('admin/login');
     }
-
     
     public function register() {
-        // Redirect to dashboard if user is already logged in
-        if ($this->session->userdata('logged_in')) {
-            redirect('admin/index');
-        }
+        // Redirect to the login page if the user is not logged in
+        $this->require_login();
     
         $data['title'] = 'Register';
     
@@ -92,6 +139,5 @@ class Admin extends CI_Controller {
             redirect('admin/login');
         }
     }
-    
     
 }

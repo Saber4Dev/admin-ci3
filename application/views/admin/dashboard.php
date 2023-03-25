@@ -1,4 +1,4 @@
-<title><?php echo $title; ?></title>
+
 
 
 <!-- Content Wrapper. Contains page content -->

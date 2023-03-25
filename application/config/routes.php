@@ -10,4 +10,4 @@ $route['admin'] = 'admin/index';
 $route['admin/register'] = 'admin/register';
 $route['admin/login'] = 'admin/login';
 $route['admin/logout'] = 'admin/logout';
-
+$route['admin/profile'] = 'admin/profile'; 

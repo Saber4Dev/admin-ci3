@@ -26,6 +26,15 @@ class Users_model extends CI_Model {
         }
     }
 
-
+    /* Fetch the user data from table users */
+    public function get_user_data($user_id) {
+        $query = $this->db->get_where('users', array('id' => $user_id));
+        return $query->row_array();
+    }
+    
+    public function get_current_user_data() {
+        $user_id = $this->session->userdata('user_id');
+        return $this->get_user_data($user_id);
+    }
 }
 

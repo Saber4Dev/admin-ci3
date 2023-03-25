@@ -3,7 +3,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.8
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2016 <a href="#">Saber Dev</a>.</strong> All rights
     reserved.
   </footer>
 
@@ -211,13 +211,17 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
+
+
+
 <!-- Bootstrap 3.3.6 -->
 <script src="<?php echo base_url(); ?>assets/admin_lte_assets/bootstrap/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="<?php echo base_url(); ?>assets/admin_lte_assets/plugins/morris/morris.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin_lte_assets/plugins/morris/morris.js"></script>
 <!-- Sparkline -->
-<script src="<?php echo base_url(); ?>assets/admin_lte_assets/assets/admin_lte_assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin_lte_assets/plugins/sparkline/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
 <script src="<?php echo base_url(); ?>assets/admin_lte_assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/admin_lte_assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
@@ -240,5 +244,53 @@
 <script src="<?php echo base_url(); ?>assets/admin_lte_assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>assets/admin_lte_assets/dist/js/demo.js"></script>
+
+
+<script>
+ $(document).ready(function() {
+  // Handle click event on profile link
+  $('#profile-link').click(function(event) {
+    event.preventDefault(); // Prevent the link from redirecting
+    console.log('Profile link clicked');
+    loadProfileView(); // Load the profile view using AJAX
+  });
+  
+  // Handle click event on dashboard link
+  $('#dashboard-link').click(function(event) {
+    event.preventDefault(); // Prevent the link from redirecting
+    loadDashboardView(); // Load the dashboard view using AJAX
+  });
+});
+
+function loadProfileView() {
+  $.ajax({
+    url: '/profile', // The URL of the profile view
+    type: 'GET', // The HTTP method to use
+    dataType: 'html', // The type of data to expect back from the server
+    success: function(data) {
+      $('#content').html(data); // Replace the content of the page with the profile view
+    },
+    error: function(xhr, status, error) {
+      console.log(error); // Log any errors to the console
+    }
+  });
+}
+
+function loadDashboardView() {
+  $.ajax({
+    url: '/dashboard', // The URL of the dashboard view
+    type: 'GET', // The HTTP method to use
+    dataType: 'html', // The type of data to expect back from the server
+    success: function(data) {
+      $('#content').html(data); // Replace the content of the page with the dashboard view
+    },
+    error: function(xhr, status, error) {
+      console.log(error); // Log any errors to the console
+    }
+  });
+}
+
+
+</script>
 </body>
 </html>
