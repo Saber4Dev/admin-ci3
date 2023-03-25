@@ -65,7 +65,8 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="<?php echo base_url(); ?>assets/admin_lte_assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                      <img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $user_data['avatar']); ?>" class="img-circle" alt="User Image">
+
                       </div>
                       <h4>
                         Support Team
@@ -247,14 +248,14 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="<?php echo base_url(); ?><?php echo $user_data['avatar'] ?? 'assets/admin_lte_assets/dist/img/user2-160x160.jpg'; ?>" class="img-circle" alt="User Image">
+            <img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $user_data['avatar']); ?>"  class="img-circle" alt="User Image">
 
               <span class="hidden-xs"><?php echo $user_data['name']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-              <img src="<?php echo base_url(); ?><?php echo $user_data['avatar'] ?? 'assets/admin_lte_assets/dist/img/user2-160x160.jpg'; ?>" class="img-circle" alt="User Image">
+              <img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $user_data['avatar']); ?>"  class="img-circle" alt="User Image">
 
                 <p>
                   <?php echo $user_data['name']; ?> - <?php echo ($user_data['is_admin']) ? 'admin' : 'user'; ?>

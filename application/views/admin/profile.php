@@ -21,11 +21,13 @@
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+           
 
-              <h3 class="profile-username text-center">Nina Mcintire</h3>
+              <img class="profile-user-img img-responsive img-circle" src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $user_data['avatar']); ?>"  alt="User profile picture">
 
-              <p class="text-muted text-center">Software Engineer</p>
+              <h3 class="profile-username text-center"><?php echo $user_data['name']; ?></h3>
+
+              <p class="text-muted text-center"><?php echo ($user_data['is_admin']) ? 'admin' : 'user'; ?></p>
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
