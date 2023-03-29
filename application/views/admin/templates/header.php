@@ -1,3 +1,8 @@
+<?php
+// Debug code
+//var_dump($user_data);
+?> 
+
 <!DOCTYPE html>
 <html>
 <head>
