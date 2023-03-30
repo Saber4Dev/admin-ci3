@@ -213,7 +213,15 @@
 </script>
 
 
-
+<script>
+$(document).ready(function() {
+  var url = window.location;
+  $('ul.sidebar-menu a[href="'+ url +'"]').parent().addClass('active');
+  $('ul.sidebar-menu a').filter(function() {
+      return this.href == url;
+  }).parent().addClass('active').parent().parent().addClass('active');
+});
+</script>
 <!-- Bootstrap 3.3.6 -->
 <script src="<?php echo base_url(); ?>assets/admin_lte_assets/bootstrap/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->

@@ -8,26 +8,17 @@ class Admin extends CI_Controller {
         $this->load->model('Users_model');
         $this->load->library('session');
         $this->load->library('form_validation');
+
+        $this->load->helper('common_helper');
+
     }
 
-    // This function loads the common views used by most pages in the admin panel
-    private function load_common_views($view_name, $data = array()) {
-        
-        // Get the current user's data
-        $user_data = $this->get_current_user_data();
-
-        // Add the user data to the $data array
-        $data['user_data'] = $user_data;
-
-        // Load the views with the data
-        $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/templates/sidebar', $data);
-        $this->load->view('admin/' . $view_name, $data);
-        $this->load->view('admin/templates/footer', $data);
+    public function Error404() {
+        $this->load_common_views('page404');
     }
 
     // This function checks if the user is logged in
-    private function check_login_status() {
+    public function check_login_status() {
         // Redirect to the login page if the user is not logged in
         if (!$this->session->userdata('logged_in')) {
             redirect('admin/login');
@@ -36,45 +27,29 @@ class Admin extends CI_Controller {
     
     // This function loads the dashboard page
     public function index() {
-        $this->check_login_status();
-        
-        // Get the current user's data
-        $user_data = $this->get_current_user_data();
-    
+   
+        // Call the get_current_user_data() function from the common helper file
+        $user_data = get_current_user_data($this);
+
+        // Pass the $user_data to the view
+        // $this->load->view('admin/dashboard', array('user_data' => $user_data));
+      
         // Load the dashboard view with the user data
-        $this->load_common_views('dashboard', $user_data);
+        load_common_views('dashboard', array('user_data' => $user_data));
     }
     
     // This function loads the profile page
     public function profile() {
-        $this->check_login_status();
-
-        // Get the current user's data
-        $user_data = $this->get_current_user_data();
+        // Call the get_current_user_data() function from the common helper file
+        $user_data = get_current_user_data($this);
 
         // Load the profile view with the user data
-        $this->load_common_views('profile', $user_data);
+        load_common_views('profile', array('user_data' => $user_data));
     }
 
-    // This function fetches the current user's data from the database
-    private function get_current_user_data() {
-        $user_id = $this->session->userdata('user_id');
-        $user_data = $this->Users_model->get_user_data($user_id);
-    
-        // Check if the user data is not empty
-        if (!empty($user_data)) {
-            // Check if the current user is an admin
-            if ($user_data['is_admin'] == 1) {
-                $user_data['is_admin'] = true;
-            } else {
-                $user_data['is_admin'] = false;
-            }
-    
-            return $user_data;
-        } else {
-            return array();
-        }
-    }
+
+
+
     
 
     // This function requires the user to be logged in before accessing the page
@@ -146,4 +121,40 @@ class Admin extends CI_Controller {
         }
     }
     
+
+    // This function fetches the current user's data from the database --------------> I switch it to helper
+    // private function get_current_user_data() {
+    //     $user_id = $this->session->userdata('user_id');
+    //     $user_data = $this->Users_model->get_user_data($user_id);
+    
+    //     // Check if the user data is not empty
+    //     if (!empty($user_data)) {
+    //         // Check if the current user is an admin
+    //         if ($user_data['is_admin'] == 1) {
+    //             $user_data['is_admin'] = true;
+    //         } else {
+    //             $user_data['is_admin'] = false;
+    //         }
+    
+    //         return $user_data;
+    //     } else {
+    //         return array();
+    //     }
+    // }
+
+    // This function loads the common views used by most pages in the admin panel --------------> I switch it to helper
+    // public function load_common_views($view_name, $data = array()) {
+        
+    //     // Get the current user's data
+    //     $user_data = $this->get_current_user_data();
+
+    //     // Add the user data to the $data array
+    //     $data['user_data'] = $user_data;
+
+    //     // Load the views with the data
+    //     $this->load->view('admin/templates/header', $data);
+    //     $this->load->view('admin/templates/sidebar', $data);
+    //     $this->load->view('admin/' . $view_name, $data);
+    //     $this->load->view('admin/templates/footer', $data);
+    // }
 }
