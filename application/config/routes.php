@@ -11,11 +11,12 @@ $route['auth/register'] = 'auth/register';
 $route['auth/logout'] = 'auth/logout';
 
 // Admin routes
+$route['admin'] = 'admin/dashboard';
 $route['admin/dashboard'] = 'admin/dashboard';
 $route['admin/users'] = 'admin/users';
 $route['admin/profile'] = 'admin/profile';
 
 // Routes for the user actions
 $route['admin/user/clients'] = 'User/clients';
-$route['admin/user/orders'] = 'User/orders';
-$route['admin/user/products'] = 'User/products';
+$route['admin/user/company'] = 'User/companies';
+$route['admin/user/services'] = 'User/services';
