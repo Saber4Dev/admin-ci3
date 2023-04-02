@@ -14,3 +14,43 @@ if (!function_exists('load_common_views')) {
     }
 }
 
+
+// function generate_breadcrumb($view_name = '') {
+//     $CI =& get_instance();
+//     $uri = $CI->uri->segment_array();
+//     $url = '';
+  
+//     $breadcrumb = '<li><a href="'.base_url().'"><i class="fa fa-home"></i> Home</a></li>';
+  
+//     foreach ($uri as $key => $value) {
+//       $url .= $value.'/';
+//       $breadcrumb .= '<li><a href="'.base_url().$url.'">'.$value.'</a></li>';
+//     }
+  
+//     $h1 = $view_name ? $view_name : end($uri);
+  
+//     return '<li><a href="'.base_url().'"><i class="fa fa-dashboard"></i> Home</a></li>
+//             '.$breadcrumb.'
+//             <li class="active">'.$h1.'</li>';
+// }
+
+function generate_breadcrumb() {
+    $CI =& get_instance();
+    $uri = $CI->uri->segment_array();
+    $url = '';
+  
+    $breadcrumb = '<li><a href="'.base_url().'"><i class="fa fa-home"></i> Home</a></li>';
+  
+    // Exclude the first and last elements of the $uri array
+    $segments_to_exclude = [0, count($uri) - 1];
+    $filtered_uri = array_filter($uri, function($k) use ($segments_to_exclude) {
+      return !in_array($k, $segments_to_exclude);
+    }, ARRAY_FILTER_USE_KEY);
+  
+    foreach ($filtered_uri as $key => $value) {
+      $url .= $value.'/';
+      $breadcrumb .= '<li><a href="'.base_url().$url.'">'.$value.'</a></li>';
+    }
+  
+    return $breadcrumb;
+  }

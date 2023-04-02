@@ -43,6 +43,10 @@ class Auth extends CI_Controller {
                 );
 
                 $this->session->set_userdata($user_data);
+                $this->session->set_flashdata('message', [
+                    'type' => 'success',
+                    'text' => 'You have successfully logged in.'
+                  ]);
 
                 redirect('admin/dashboard');
             } else {

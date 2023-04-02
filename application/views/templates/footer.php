@@ -252,6 +252,9 @@ $(document).ready(function() {
 <script src="<?php echo base_url(); ?>assets/admin_lte_assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>assets/admin_lte_assets/dist/js/demo.js"></script>
+<!-- Sweet Alert2 CDN -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+
 
 
 <script>
@@ -298,7 +301,15 @@ function loadDashboardView() {
   });
 }
 
+<?php if ($this->session->flashdata('message') !== null && $this->session->flashdata('message')['type'] === 'success'): ?>
+    Swal.fire({
+      icon: 'success',
+      text: '<?= $this->session->flashdata('message')['text'] ?>'
+    });
+  <?php endif; ?>
 
+  
 </script>
+
 </body>
 </html>

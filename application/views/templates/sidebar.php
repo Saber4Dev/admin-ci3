@@ -76,3 +76,18 @@
     </section>
     <!-- /.sidebar -->
   </aside>
+
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        <?php echo ucwords(str_replace('_', ' ', $this->uri->segment(2))); ?>
+        <small><?php echo ucwords(str_replace('_', ' ', $this->uri->segment(3))); ?></small>
+      </h1>
+      <ol class="breadcrumb">
+        <?php echo generate_breadcrumb(); ?>
+        <li class="active"><?php echo ucwords(str_replace('_', ' ', $this->uri->segment(4))); ?></li>
+      </ol>
+  </section>

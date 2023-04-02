@@ -1,0 +1,5 @@
+1. Add a button to the customer table view that opens a modal with a form to add a new customer.
+2. Write the AJAX code to submit the form data and add the new customer to the table without refreshing the page.
+3. Add a confirmation button using Sweet Alert to delete a customer from the table.
+4. Write the AJAX code to delete the customer from the table without refreshing the page.
+5. Test the functionality of adding and deleting customers to ensure they are working properly.
