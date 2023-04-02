@@ -16,12 +16,14 @@ application/
 └── views/
     ├── admin/
     │   ├── dashboard.php
+    │   │   
     │   ├── profile.php
     │   └── user/
     │       └── clients.php
     ├── auth/
     │   ├── login.php
-    |	   ├──Header.php & footer.php
+    |	|   Header.php & footer.php
+    |	|   logout.php
     │   └── register.php
     ├── errors/
     │   └── page404.php
@@ -30,7 +32,6 @@ application/
     │   ├── header.php
     │   └── sidebar.php
     ├── home.php
-    ├── logout.php
     └── welcome_message.php
 
 public/
@@ -39,3 +40,59 @@ public/
     ├── css/
     ├── img/
     └── js/
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Directories
+application/
+This directory contains the main code for the application.
+
+config/
+This directory contains configuration files for the application.
+
+config.php: contains the configuration options for the application.
+database.php: contains the configuration options for the database connection.
+routes.php: contains the routing configuration for the application.
+controllers/
+This directory contains the controller classes for the application.
+
+Admin.php: contains the logic for the admin section of the application.
+Auth.php: contains the logic for the authentication (login and registration) of the application.
+Home.php: contains the logic for the home page of the application.
+User.php: contains the logic for the user section of the application.
+helpers/
+This directory contains helper functions for the application.
+
+common_helper.php: contains common functions used across the application.
+models/
+This directory contains the model classes for the application.
+
+Client_model.php: contains the methods for accessing and manipulating data related to clients.
+Users_model.php: contains the methods for accessing and manipulating data related to users.
+views/
+This directory contains the view files for the application.
+
+admin/: contains the view files for the admin section of the application.
+auth/: contains the view files for the authentication section of the application.
+errors/: contains the view files for error pages (e.g. 404 page).
+templates/: contains the template files for the application (header, footer, sidebar).
+home.php: contains the view file for the home page of the application.
+welcome_message.php: contains the view file for the welcome page of the application.
+public/
+This directory contains the publicly accessible files for the application.
+
+assets/
+This directory contains the static assets (CSS, JS, images) for the application.
+
+Database
+The application uses a MySQL database named admin-ci3. It contains the following tables:
+
+clients: contains the data related to clients.
+users: contains the data related to users.
+Login
+The application comes with an admin account with the following credentials:
+
+Email: john.doe@example.com
+Password: password123
