@@ -6,6 +6,6 @@
 <body>
 	<h1>Logout</h1>
 	<p>You have been logged out.</p>
-	<p><a href="<?php echo base_url('login'); ?>">Login again</a></p>
+	<p><a href="<?php echo base_url('auth/login'); ?>">Login again</a></p>
 </body>
 </html>

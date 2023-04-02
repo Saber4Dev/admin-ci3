@@ -1,0 +1,41 @@
+application/
+├── config/
+│   ├── config.php
+│   ├── database.php
+│   └── routes.php
+├── controllers/
+│   ├── Admin.php
+│   ├── Auth.php
+│   ├── Home.php
+│   └── User.php
+├── helpers/
+│   └── common_helper.php
+├── models/
+│   ├── Client_model.php
+│   └── Users_model.php
+└── views/
+    ├── admin/
+    │   ├── dashboard.php
+    │   ├── profile.php
+    │   └── user/
+    │       └── clients.php
+    ├── auth/
+    │   ├── login.php
+    |	   ├──Header.php & footer.php
+    │   └── register.php
+    ├── errors/
+    │   └── page404.php
+    ├── templates/
+    │   ├── footer.php
+    │   ├── header.php
+    │   └── sidebar.php
+    ├── home.php
+    ├── logout.php
+    └── welcome_message.php
+
+public/
+└── assets/
+    ├── admin_lte_assets/
+    ├── css/
+    ├── img/
+    └── js/

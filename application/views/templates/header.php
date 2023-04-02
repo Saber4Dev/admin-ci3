@@ -1,6 +1,8 @@
 <?php
 // Debug code
 //var_dump($user_data);
+
+print_r($user); // Debug code
 ?> 
 
 <!DOCTYPE html>
@@ -70,8 +72,11 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                      <img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $user_data['avatar']); ?>" class="img-circle" alt="User Image">
-
+                      <?php if(isset($user['avatar'])): ?>
+    <img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $user['avatar']); ?>" class="img-circle" alt="User Image">
+<?php else: ?>
+    <img src="<?php echo base_url('assets/admin_lte_assets/dist/img/default-avatar.png'); ?>" class="img-circle" alt="User Image">
+<?php endif; ?>
                       </div>
                       <h4>
                         Support Team
@@ -253,19 +258,20 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $user_data['avatar']); ?>"  class="img-circle" alt="User Image">
+            <img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $user['avatar']); ?>"  class="img-circle" alt="User Image">
 
-              <span class="hidden-xs"><?php echo $user_data['name']; ?></span>
+              <span class="hidden-xs"><?php echo $user['name']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-              <img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $user_data['avatar']); ?>"  class="img-circle" alt="User Image">
+              <img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $user['avatar']); ?>"  class="img-circle" alt="User Image">
 
-                <p>
-                  <?php echo $user_data['name']; ?> - <?php echo ($user_data['is_admin']) ? 'admin' : 'user'; ?>
-                  <small>Member since <?php echo date('M Y', strtotime($user_data['created_at'])); ?></small>
+              <p>
+                  <?php echo $user['name']; ?> - <?php echo ($user['is_admin']) ? 'admin' : 'user'; ?>
+                  <small>Member since <?php echo date('M Y', strtotime($user['created_at'])); ?></small>
               </p>
+
 
               </li>
               <!-- Menu Body -->
@@ -290,7 +296,7 @@
                 </div>
 
                 <div class="pull-right">
-                  <a href="<?php echo base_url('admin/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url('auth/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
                     </div>
 
               </li>
