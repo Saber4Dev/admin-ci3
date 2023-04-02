@@ -3,23 +3,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 
-    public function __construct()
-    {
+
+
+        public function __construct() {
         parent::__construct();
         $this->load->model('client_model'); // load client model
-        $this->check_login(); // check if user is logged in
+        $this->load->model('users_model'); // load users model
+        $this->load->helper('common_helper');
+        $this->load->library('session');
+        if(!$this->session->userdata('logged_in')) {
+            redirect('auth/login');
+        }
     }
+    
 
     // Clients page
     public function clients()
     {
-        $data['title'] = 'Clients'; // set page title
-        $data['user'] = $this->session->userdata('user'); // get user data from session
-        $data['clients'] = $this->client_model->get_clients(); // get all clients from database
-        $this->load->view('templates/header', $data); // load header view
-        $this->load->view('templates/sidebar'); // load sidebar view
-        $this->load->view('admin/user/clients', $data); // load clients view
-        $this->load->view('templates/footer'); // load footer view
+        // Load the logged in user's data from the database
+        $user_id = $this->session->userdata('user_id');
+        $user = $this->users_model->get_user_by_id($user_id);
+
+        $client = $this->client_model->get_clients_by_user_id($user_id); // get all clients from database
+
+        // Pass the user's data to the view
+        $data['user'] = $user;
+        $data['clients'] = $client;
+
+
+
+        $data['title'] = 'Clients';  // set page title
+        load_common_views('user/clients', $data);
     }
 
     // Check if user is logged in
@@ -32,8 +46,7 @@ class User extends CI_Controller {
 
     // This function loads the client user client...
     public function Show_clients() {
-        // Check login status
-        check_login_status($this);
+ 
 
         // Get the current user's data
         $user_data = get_current_user_data($this);

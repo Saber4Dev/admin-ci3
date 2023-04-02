@@ -26,7 +26,6 @@
               <h3 class="box-title">Clients</h3>
               <div class="box-tools">
               <button type="button" class="btn bg-olive btn-flat" data-toggle="modal" data-target="#addClientModal"><i class="fa fa-plus"></i> Add</button>
-</button>
             </div>
             </div>
             <!-- /.box-header -->

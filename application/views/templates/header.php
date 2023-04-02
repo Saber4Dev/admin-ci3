@@ -2,7 +2,7 @@
 // Debug code
 //var_dump($user_data);
 
-print_r($user); // Debug code
+//print_r($user); // Debug code
 ?> 
 
 <!DOCTYPE html>
