@@ -17,53 +17,52 @@
             <!-- /.box-header -->
             <div class="box-body">
 
-              <!-- Client table -->
-              <?php if (!empty($clients)) { ?>
-                <table id="example2" class="table table-bordered table-hover">
+                    <!-- Client table -->
+                    <?php if (!empty($clients)) { ?>
+                    <table id="ClientTable" class="table table-bordered table-hover">
                         <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Address</th>
-                                <th>Action</th>
-                            </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Status</th>
+                            <th>Options</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($clients as $client): ?>
-                                <tr>
-                                    <td><?php echo $client->id; ?></td>
-                                    <td><img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $client->photo); ?>" alt="<?php echo $client->name; ?>" height="50"></td>
-                                    <td><a href="<?php echo base_url('admin/user/client_profile/' . $client->id); ?>"><?php echo $client->name; ?></a></td>
-                                    <td><?php echo $client->email; ?></td>
-                                    <td><?php echo $client->phone; ?></td>
-                                    <td><?php echo $client->address; ?></td>
-                                    <td>
-                                        <a href="#" class="btn bg-orange"><i class="fa fa-edit"></i></a>
-                                        <a href="#" class="btn bg-maroon"><i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                        <tfoot>
+                        <?php foreach ($clients as $client): ?>
                             <tr>
-                                <th>ID</th>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Address</th>
-                                <th>Action</th>
-                            </tr>
-                        </tfoot>
-                    </table>
+                            <td><?php echo $client->id; ?></td>
+                            <td><img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $client->photo); ?>" alt="<?php echo $client->name; ?>" height="50"></td>
+                            <td><a href="<?php echo base_url('user/client_profile/' . $client->id); ?>"><?php echo $client->name; ?></a></td>
+                            <td><?php echo $client->email; ?></td>
+                            <td><?php echo $client->phone; ?></td>
+                            <td><?php echo $client->address; ?></td>
+                            <td>
+                                <?php if ($client->is_active == 1) {
+                                echo '<span class="label label-success">Active</span>';
+                                } else {
+                                echo '<span class="label label-danger">Disabled</span>';
+                                } ?>
+                            </td>
+                            <td>
+                                <a href="#" class="color-orange"><i class="fa fa-edit"></i></a>
+                                <span class="color-gray"> | </span>
+                                <a href="#" class="color-maroon"><i class="fa fa-trash"></i></a>
+                            </td>
 
-              <?php } else { ?>
-                <p>No clients found.</p>
-              <?php } ?>
-    
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <?php } else { ?>
+                    <p>No clients found.</p>
+                    <?php } ?>
+                    <!-- END Client table -->
+
             </div>
             <!-- /.box-body -->
           </div>

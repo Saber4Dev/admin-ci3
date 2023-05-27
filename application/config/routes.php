@@ -17,9 +17,8 @@ $route['admin/users'] = 'admin/users';
 $route['admin/profile'] = 'admin/profile';
 
 // Routes for the user actions
-$route['admin/user/clients'] = 'User/clients';
-$route['admin/user/company'] = 'User/companies';
-$route['admin/user/services'] = 'User/services';
+$route['admin/user/clients'] = 'client/clients';
 
 // Route for the client profile
-$route['admin/user/client_profile/(:num)'] = 'user/client_profile/$1';
+$route['user/client_profile/(:num)'] = 'client/profile/$1';
+

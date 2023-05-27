@@ -7,11 +7,17 @@ class Client_model extends CI_Model {
         return $query->result();
     }
 
+    // Fetches a client by their ID
+    public function get_client_by_id($client_id) {
+        $this->db->select('*');
+        $query = $this->db->get_where('client', array('id' => $client_id));
+        return $query->row_array();
+    }
+
     // This function inserts a new client
     public function insert_client($data) {
         return $this->db->insert('client', $data);
     }
-
     
 
 }
