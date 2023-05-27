@@ -12,4 +12,6 @@ class Client_model extends CI_Model {
         return $this->db->insert('client', $data);
     }
 
+    
+
 }

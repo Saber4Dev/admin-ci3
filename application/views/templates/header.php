@@ -3,6 +3,7 @@
 //var_dump($user_data);
 
 //print_r($user); // Debug code
+
 ?> 
 
 <!DOCTYPE html>

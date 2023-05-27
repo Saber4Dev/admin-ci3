@@ -30,10 +30,19 @@ class User extends CI_Controller {
         $data['user'] = $user;
         $data['clients'] = $client;
 
-
-
         $data['title'] = 'Clients';  // set page title
         load_common_views('user/clients', $data);
+    }
+
+
+    /* Handle the client profile page*/
+    public function client_profile($client_id) {
+        $data['title'] = 'Client Profile';
+    
+        $data['client'] = $this->users_model->get_client_by_id($client_id);
+        $data['user'] = $this->users_model->get_user_by_id($this->session->userdata('user_id'));
+    
+        load_common_views('user/client_profile', $data);
     }
 
     // Check if user is logged in
@@ -83,6 +92,9 @@ class User extends CI_Controller {
         load_common_views('user/clients', array('user_data' => $user_data, 'validation_errors' => validation_errors(), 'data' => $data));
     }
 
+
+        
+
     // Custom validation callback function to upload the client photo
     public function upload_photo() {
         if (!empty($_FILES['photo']['name'])) {
@@ -101,4 +113,7 @@ class User extends CI_Controller {
             }
         }
     }
+
+
+    
 }

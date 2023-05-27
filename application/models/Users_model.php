@@ -14,6 +14,7 @@ class Users_model extends CI_Model {
         return $this->db->insert('users', $data);
     }
     
+    // login fucntion
     public function login($email, $password) {
         $this->db->where('email', $email);
         $this->db->where('password', $password);
@@ -52,6 +53,12 @@ class Users_model extends CI_Model {
             $user_data['is_admin'] = false;
         }
         return $user_data;
+    }
+
+    public function get_client_by_id($client_id) {
+        $this->db->select('*');
+        $query = $this->db->get_where('client', array('id' => $client_id));
+        return $query->row_array();
     }
     
 }

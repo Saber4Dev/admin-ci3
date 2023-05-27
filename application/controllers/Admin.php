@@ -63,5 +63,8 @@ class Admin extends CI_Controller {
         $this->users_model->delete_user($id);
         redirect('admin/users');
     }
+
+
+
     
 }

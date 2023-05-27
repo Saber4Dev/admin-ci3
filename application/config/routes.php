@@ -20,3 +20,6 @@ $route['admin/profile'] = 'admin/profile';
 $route['admin/user/clients'] = 'User/clients';
 $route['admin/user/company'] = 'User/companies';
 $route['admin/user/services'] = 'User/services';
+
+// Route for the client profile
+$route['admin/user/client_profile/(:num)'] = 'user/client_profile/$1';

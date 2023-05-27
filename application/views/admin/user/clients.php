@@ -19,46 +19,47 @@
 
               <!-- Client table -->
               <?php if (!empty($clients)) { ?>
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php foreach ($clients as $client): ?>
-                    <tr>
-                      <td><?php echo $client->id; ?></td>
-                      <td><img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $client->photo); ?>" alt="<?php echo $client->name; ?>" height="50"></td>
-                      <td><?php echo $client->name; ?></td>
-                      <td><?php echo $client->email; ?></td>
-                      <td><?php echo $client->phone; ?></td>
-                      <td><?php echo $client->address; ?></td>
-                      <td>
-                        <a href="#" class="btn bg-orange"><i class="fa fa-edit"></i></a>
-                        <a href="#" class="btn bg-maroon"><i class="fa fa-trash"></i></a>
-                      </td>
-                    </tr>
-                  <?php endforeach; ?>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <th>ID</th>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>Action</th>
-                  </tr>
-                </tfoot>
-              </table>
+                <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($clients as $client): ?>
+                                <tr>
+                                    <td><?php echo $client->id; ?></td>
+                                    <td><img src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $client->photo); ?>" alt="<?php echo $client->name; ?>" height="50"></td>
+                                    <td><a href="<?php echo base_url('admin/user/client_profile/' . $client->id); ?>"><?php echo $client->name; ?></a></td>
+                                    <td><?php echo $client->email; ?></td>
+                                    <td><?php echo $client->phone; ?></td>
+                                    <td><?php echo $client->address; ?></td>
+                                    <td>
+                                        <a href="#" class="btn bg-orange"><i class="fa fa-edit"></i></a>
+                                        <a href="#" class="btn bg-maroon"><i class="fa fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>ID</th>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Action</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+
               <?php } else { ?>
                 <p>No clients found.</p>
               <?php } ?>
