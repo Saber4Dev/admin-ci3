@@ -1,6 +1,6 @@
 # CodeIgniter-3.1.4
-CodeIgniter-3.1.4 Basic Set Up
 
+CodeIgniter-3.1.4 Basic Set Up
 
 CodeIgniter Framework
 Overview
@@ -13,7 +13,7 @@ The framework also includes a set of pre-built views and models for users and cl
 
 Installation
 Download the project and place it in your web server's htdocs folder.
-Rename the project folder as _ci314_.
+Rename the project folder as _admin-ci3_.
 Import the database admin-ci3.sql into your MySQL server.
 Update the application/config/database.php file with your MySQL database details.
 Usage
@@ -21,7 +21,7 @@ To access the application, navigate to the following URL:
 
 arduino
 Copy code
-http://localhost/_ci314_/
+http://localhost/_admin-ci3_/
 Login
 To access the admin panel, login using the following credentials:
 
