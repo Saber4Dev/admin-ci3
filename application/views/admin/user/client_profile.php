@@ -295,8 +295,7 @@
                   </li>
                 </ul>
               </div>
-              <!-- /.tab-pane -->
-              <!-- /.tab-pane -->
+             
               <div class="tab-pane" id="invoice">
                 <!-- The timeline -->
                 <div class="pad margin no-print">
@@ -306,227 +305,480 @@
                   </div>
                 </div>
 
-              <!-- Main content -->
-              <section class="invoice">
-                <!-- title row -->
-                <div class="row">
-                  <div class="col-xs-12">
-                    <h2 class="page-header">
-                      <i class="fa fa-globe"></i> AdminLTE, Inc.
-                      <small class="pull-right">Date: 2/10/2014</small>
-                    </h2>
+            
+                <section class="invoice">
+                  <!-- title row -->
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h2 class="page-header">
+                        <i class="fa fa-globe"></i> AdminLTE, Inc.
+                        <small class="pull-right">Date: 2/10/2014</small>
+                      </h2>
+                    </div>
+                    <!-- /.col -->
                   </div>
-                  <!-- /.col -->
-                </div>
-                <!-- info row -->
-                <div class="row invoice-info">
-                  <div class="col-sm-4 invoice-col">
-                    From
-                    <address>
-                      <strong>Admin, Inc.</strong><br>
-                      795 Folsom Ave, Suite 600<br>
-                      San Francisco, CA 94107<br>
-                      Phone: (804) 123-5432<br>
-                      Email: info@almasaeedstudio.com
-                    </address>
+                  <!-- info row -->
+                  <div class="row invoice-info">
+                    <div class="col-sm-4 invoice-col">
+                      From
+                      <address>
+                        <strong>Admin, Inc.</strong><br>
+                        795 Folsom Ave, Suite 600<br>
+                        San Francisco, CA 94107<br>
+                        Phone: (804) 123-5432<br>
+                        Email: info@almasaeedstudio.com
+                      </address>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-4 invoice-col">
+                      To
+                      <address>
+                        <strong>John Doe</strong><br>
+                        795 Folsom Ave, Suite 600<br>
+                        San Francisco, CA 94107<br>
+                        Phone: (555) 539-1037<br>
+                        Email: john.doe@example.com
+                      </address>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-4 invoice-col">
+                      <b>Invoice #007612</b><br>
+                      <br>
+                      <b>Order ID:</b> 4F3S8J<br>
+                      <b>Payment Due:</b> 2/22/2014<br>
+                      <b>Account:</b> 968-34567
+                    </div>
+                    <!-- /.col -->
                   </div>
-                  <!-- /.col -->
-                  <div class="col-sm-4 invoice-col">
-                    To
-                    <address>
-                      <strong>John Doe</strong><br>
-                      795 Folsom Ave, Suite 600<br>
-                      San Francisco, CA 94107<br>
-                      Phone: (555) 539-1037<br>
-                      Email: john.doe@example.com
-                    </address>
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-sm-4 invoice-col">
-                    <b>Invoice #007612</b><br>
-                    <br>
-                    <b>Order ID:</b> 4F3S8J<br>
-                    <b>Payment Due:</b> 2/22/2014<br>
-                    <b>Account:</b> 968-34567
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.row -->
+                  <!-- /.row -->
 
-                <!-- Table row -->
-                <div class="row">
-                  <div class="col-xs-12 table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                      <tr>
-                        <th>Qty</th>
-                        <th>Product</th>
-                        <th>Serial #</th>
-                        <th>Description</th>
-                        <th>Subtotal</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Call of Duty</td>
-                        <td>455-981-221</td>
-                        <td>El snort testosterone trophy driving gloves handsome</td>
-                        <td>$64.50</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Need for Speed IV</td>
-                        <td>247-925-726</td>
-                        <td>Wes Anderson umami biodiesel</td>
-                        <td>$50.00</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Monsters DVD</td>
-                        <td>735-845-642</td>
-                        <td>Terry Richardson helvetica tousled street art master</td>
-                        <td>$10.70</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Grown Ups Blue Ray</td>
-                        <td>422-568-642</td>
-                        <td>Tousled lomo letterpress</td>
-                        <td>$25.99</td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                  <!-- accepted payments column -->
-                  <div class="col-xs-6">
-                    <p class="lead">Payment Methods:</p>
-                    <img src="../../dist/img/credit/visa.png" alt="Visa">
-                    <img src="../../dist/img/credit/mastercard.png" alt="Mastercard">
-                    <img src="../../dist/img/credit/american-express.png" alt="American Express">
-                    <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
-
-                    <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-                      Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg
-                      dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
-                    </p>
-                  </div>
-                  <!-- /.col -->
-                  <div class="col-xs-6">
-                    <p class="lead">Amount Due 2/22/2014</p>
-
-                    <div class="table-responsive">
-                      <table class="table">
+                  <!-- Table row -->
+                  <div class="row">
+                    <div class="col-xs-12 table-responsive">
+                      <table class="table table-striped">
+                        <thead>
                         <tr>
-                          <th style="width:50%">Subtotal:</th>
-                          <td>$250.30</td>
+                          <th>Qty</th>
+                          <th>Product</th>
+                          <th>Serial #</th>
+                          <th>Description</th>
+                          <th>Subtotal</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Call of Duty</td>
+                          <td>455-981-221</td>
+                          <td>El snort testosterone trophy driving gloves handsome</td>
+                          <td>$64.50</td>
                         </tr>
                         <tr>
-                          <th>Tax (9.3%)</th>
-                          <td>$10.34</td>
+                          <td>1</td>
+                          <td>Need for Speed IV</td>
+                          <td>247-925-726</td>
+                          <td>Wes Anderson umami biodiesel</td>
+                          <td>$50.00</td>
                         </tr>
                         <tr>
-                          <th>Shipping:</th>
-                          <td>$5.80</td>
+                          <td>1</td>
+                          <td>Monsters DVD</td>
+                          <td>735-845-642</td>
+                          <td>Terry Richardson helvetica tousled street art master</td>
+                          <td>$10.70</td>
                         </tr>
                         <tr>
-                          <th>Total:</th>
-                          <td>$265.24</td>
+                          <td>1</td>
+                          <td>Grown Ups Blue Ray</td>
+                          <td>422-568-642</td>
+                          <td>Tousled lomo letterpress</td>
+                          <td>$25.99</td>
                         </tr>
+                        </tbody>
                       </table>
                     </div>
+                    <!-- /.col -->
                   </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.row -->
+                  <!-- /.row -->
 
-                <!-- this row will not appear when printing -->
-                <div class="row no-print">
-                  <div class="col-xs-12">
-                    <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
-                    <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment
-                    </button>
-                    <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
-                      <i class="fa fa-download"></i> Generate PDF
-                    </button>
-                  </div>
-                </div>
-              </section>
-              <!-- /.content -->
-              </div>
-              <!-- /.tab-pane -->
+                  <div class="row">
+                    <!-- accepted payments column -->
+                    <div class="col-xs-6">
+                      <p class="lead">Payment Methods:</p>
+                      <img src="../../dist/img/credit/visa.png" alt="Visa">
+                      <img src="../../dist/img/credit/mastercard.png" alt="Mastercard">
+                      <img src="../../dist/img/credit/american-express.png" alt="American Express">
+                      <img src="../../dist/img/credit/paypal2.png" alt="Paypal">
 
-              <div class="tab-pane" id="settings">
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Name</label>
-
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputName" placeholder="Name">
+                      <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+                        Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg
+                        dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
+                      </p>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                    <!-- /.col -->
+                    <div class="col-xs-6">
+                      <p class="lead">Amount Due 2/22/2014</p>
 
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Name</label>
-
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputName" placeholder="Name">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
-
-                    <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
-
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                        </label>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <tr>
+                            <th style="width:50%">Subtotal:</th>
+                            <td>$250.30</td>
+                          </tr>
+                          <tr>
+                            <th>Tax (9.3%)</th>
+                            <td>$10.34</td>
+                          </tr>
+                          <tr>
+                            <th>Shipping:</th>
+                            <td>$5.80</td>
+                          </tr>
+                          <tr>
+                            <th>Total:</th>
+                            <td>$265.24</td>
+                          </tr>
+                        </table>
                       </div>
                     </div>
+                    <!-- /.col -->
                   </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-danger">Submit</button>
+                  <!-- /.row -->
+
+                  <!-- this row will not appear when printing -->
+                  <div class="row no-print">
+                    <div class="col-xs-12">
+                      <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+                      <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment
+                      </button>
+                      <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+                        <i class="fa fa-download"></i> Generate PDF
+                      </button>
                     </div>
                   </div>
-                </form>
-              </div>
+                </section>
+                <!-- /.content -->
+                </div>
               <!-- /.tab-pane -->
-            </div>
-            <!-- /.tab-content -->
-          </div>
-          <!-- /.nav-tabs-custom -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+              <div class="tab-pane" id="siteweb">
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                      <!-- left column -->
+                      <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="box box-primary">
+                          <div class="box-header with-border">
+                          <div class="box-profile">
+                            <img class="profile-user-img img-responsive img-circle" src="<?php echo base_url('assets/admin_lte_assets/dist/img/' . $client['photo']); ?>"  alt="User profile picture">
+                          </div>
+                            <h3 class="box-title center">Company</h3>
+                          </div>
+                          <!-- /.box-header -->
+                        </div>
+                        <!-- /.box -->
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+
+
+                        <!-- Input addon -->
+                        <div class="box box-info">
+                          <div class="box-header with-border">
+                            <h3 class="box-title">Input Addon</h3>
+                          </div>
+                          <div class="box-body">
+                            <div class="input-group">
+                              <span class="input-group-addon">@</span>
+                              <input type="text" class="form-control" placeholder="Username">
+                            </div>
+                            <br>
+
+                            <div class="input-group">
+                              <input type="text" class="form-control">
+                              <span class="input-group-addon">.00</span>
+                            </div>
+                            <br>
+
+                            <div class="input-group">
+                              <span class="input-group-addon">$</span>
+                              <input type="text" class="form-control">
+                              <span class="input-group-addon">.00</span>
+                            </div>
+
+                            <h4>With icons</h4>
+
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                              <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                            <br>
+
+                            <div class="input-group">
+                              <input type="text" class="form-control">
+                              <span class="input-group-addon"><i class="fa fa-check"></i></span>
+                            </div>
+                            <br>
+
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                              <input type="text" class="form-control">
+                              <span class="input-group-addon"><i class="fa fa-ambulance"></i></span>
+                            </div>
+
+                            <h4>With checkbox and radio inputs</h4>
+
+                            <div class="row">
+                              <div class="col-lg-6">
+                                <div class="input-group">
+                                      <span class="input-group-addon">
+                                        <input type="checkbox">
+                                      </span>
+                                  <input type="text" class="form-control">
+                                </div>
+                                <!-- /input-group -->
+                              </div>
+                              <!-- /.col-lg-6 -->
+                              <div class="col-lg-6">
+                                <div class="input-group">
+                                      <span class="input-group-addon">
+                                        <input type="radio">
+                                      </span>
+                                  <input type="text" class="form-control">
+                                </div>
+                                <!-- /input-group -->
+                              </div>
+                              <!-- /.col-lg-6 -->
+                            </div>
+                            <!-- /.row -->
+
+                            <h4>With buttons</h4>
+
+                            <p class="margin">Large: <code>.input-group.input-group-lg</code></p>
+
+                            <div class="input-group input-group-lg">
+                              <div class="input-group-btn">
+                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Action
+                                  <span class="fa fa-caret-down"></span></button>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Action</a></li>
+                                  <li><a href="#">Another action</a></li>
+                                  <li><a href="#">Something else here</a></li>
+                                  <li class="divider"></li>
+                                  <li><a href="#">Separated link</a></li>
+                                </ul>
+                              </div>
+                              <!-- /btn-group -->
+                              <input type="text" class="form-control">
+                            </div>
+                            <!-- /input-group -->
+                            <p class="margin">Normal</p>
+
+                            <div class="input-group">
+                              <div class="input-group-btn">
+                                <button type="button" class="btn btn-danger">Action</button>
+                              </div>
+                              <!-- /btn-group -->
+                              <input type="text" class="form-control">
+                            </div>
+                            <!-- /input-group -->
+                            <p class="margin">Small <code>.input-group.input-group-sm</code></p>
+
+                            <div class="input-group input-group-sm">
+                              <input type="text" class="form-control">
+                                  <span class="input-group-btn">
+                                    <button type="button" class="btn btn-info btn-flat">Go!</button>
+                                  </span>
+                            </div>
+                            <!-- /input-group -->
+                          </div>
+                          <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+
+                      </div>
+                      <!--/.col (left) -->
+                      <!-- right column -->
+                      <div class="col-md-6">
+                        <!-- Horizontal Form -->
+                        <div class="box box-info">
+                          <div class="box-header with-border">
+                            <h3 class="box-title">Horizontal Form</h3>
+                          </div>
+                          <!-- /.box-header -->
+                          <!-- form start -->
+                          <form class="form-horizontal">
+                            <div class="box-body">
+                              <div class="form-group">
+                                <label for="companyname" class="col-sm-2 control-label">Name</label>
+
+                                <div class="col-sm-10">
+                                  <input type="email" class="form-control" id="companyname" placeholder="Company Name">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputFile">File input</label>
+                                <input type="file" id="exampleInputFile">
+
+                                <p class="help-block">Adding Logo to company</p>
+                              </div>
+                             
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                              <button type="submit" class="btn btn-default">Cancel</button>
+                              <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                            </div>
+                            <!-- /.box-footer -->
+                          </form>
+                        </div>
+                        <!-- /.box -->
+                        <!-- general form elements disabled -->
+                        <div class="box box-warning">
+                          <div class="box-header with-border">
+                            <h3 class="box-title">General Elements</h3>
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body">
+                            <form role="form">
+                              <!-- text input -->
+                              <div class="form-group">
+                                <label>Text</label>
+                                <input type="text" class="form-control" placeholder="Enter ...">
+                              </div>
+                            
+
+                              <!-- textarea -->
+                              <div class="form-group">
+                                <label>Textarea</label>
+                                <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                              </div>
+                              
+
+                              <!-- input states -->
+                              <div class="form-group has-success">
+                                <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Input with success</label>
+                                <input type="text" class="form-control" id="inputSuccess" placeholder="Enter ...">
+                                <span class="help-block">Help block with success</span>
+                              </div>
+                              
+
+                              <!-- checkbox -->
+                              <div class="form-group">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox">
+                                    Checkbox 1
+                                  </label>
+                                </div>
+
+                              </div>
+
+                              <!-- radio -->
+                              <div class="form-group">
+                                <div class="radio">
+                                  <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                    Option one is this and that&mdash;be sure to include why it's great
+                                  </label>
+                                </div>
+                                
+                              </div>
+
+                              <!-- select -->
+                              <div class="form-group">
+                                <label>Select</label>
+                                <select class="form-control">
+                                  <option>option 1</option>
+                                  <option>option 2</option>
+                                  <option>option 3</option>
+                                  <option>option 4</option>
+                                  <option>option 5</option>
+                                </select>
+                              </div>
+
+                              
+                              
+
+                            </form>
+                          </div>
+                          <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                      </div>
+                                <!--/.col (right) -->
+                              </div>
+                              <!-- /.row -->
+                            </section>
+                            <!-- /.content -->
+                                        <!-- /.content -->
+                                        </div>
+                                      <!-- /.tab-pane -->
+
+                            
+                            <div class="tab-pane" id="settings">
+                              <form class="form-horizontal">
+                                <div class="form-group">
+                                  <label for="inputName" class="col-sm-2 control-label">Name</label>
+
+                                  <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputName" placeholder="Name">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+
+                                  <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="inputName" class="col-sm-2 control-label">Name</label>
+
+                                  <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
+
+                                  <div class="col-sm-10">
+                                    <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="inputSkills" class="col-sm-2 control-label">Skills</label>
+
+                                  <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-danger">Submit</button>
+                                  </div>
+                                </div>
+                              </form>
+                              </div>
+                            <!-- /.tab-pane -->
+                          </div>
+                          <!-- /.tab-content -->
+                        </div>
+                        <!-- /.nav-tabs-custom -->
+                      </div>
+                      <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+
+                  </section>
+                  <!-- /.content -->
+                </div>
+                <!-- /.content-wrapper -->
  
 <!-- Start of the footer -->
