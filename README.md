@@ -82,7 +82,7 @@ http://localhost/DASHBOARD_CI3/
 
 ## Database
 
-The application uses a MySQL database named `pixecbiw_saberea.sql`, which contains the following tables:
+The application uses a MySQL database named `admin-ci3.sql`, which contains the following tables:
 
 - `clients`: Data related to clients.
 - `users`: Data related to users.
