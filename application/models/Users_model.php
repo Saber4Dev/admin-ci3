@@ -2,63 +2,58 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Users_model extends CI_Model {
-    
-    public function register($name, $email, $password) {
-        $data = array(
-            'name' => $name,
-            'email' => $email,
-            'password' => $password
-        );
-        
-        // Insert data into the users table
-        return $this->db->insert('users', $data);
-    }
-    
-    // login fucntion
-    public function login($email, $password) {
-        $this->db->where('email', $email);
-        $this->db->where('password', $password);
-        
-        // Get the user's data from the users table
-        $result = $this->db->get('users')->row_array();
-        
-        if ($result) {
-            return $result;
-        } else {
-            return false;
-        }
-    }
 
-    /**
-     * Fetch the user data from the users table
-     * @param int $user_id User ID
-     * @return array User data
-     */
     public function get_user_by_id($user_id) {
-        $query = $this->db->get_where('users', array('id' => $user_id));
+        $query = $this->db->get_where('Users', array('id' => $user_id));
         return $query->row_array();
     }
-    
-    
-    /**
-     * Get current user's data
-     * @return array User data
-     */
+
     public function get_current_user_data() {
         $user_id = $this->session->userdata('user_id');
-        $user_data = $this->get_user_by_id($user_id);
-        if ($user_data['is_admin'] == 1) {
-            $user_data['is_admin'] = true;
-        } else {
-            $user_data['is_admin'] = false;
+
+        if ($user_id) {
+            $user_data = $this->get_user_by_id($user_id);
+            if ($user_data['is_admin'] == 1) {
+                $user_data['is_admin'] = true;
+            } else {
+                $user_data['is_admin'] = false;
+            }
+            return $user_data;
         }
-        return $user_data;
+
+        return false;
     }
 
-    public function get_client_by_id($client_id) {
-        $this->db->select('*');
-        $query = $this->db->get_where('client', array('id' => $client_id));
-        return $query->row_array();
+    public function is_admin($user_id) {
+        $query = $this->db->get_where('Users', array('id' => $user_id));
+        $user_data = $query->row_array();
+        return ($user_data['is_admin'] == 1);
     }
+
+    public function update_user_profile($user_id, $data) {
+        $this->db->where('id', $user_id);
+        return $this->db->update('Users', $data);
+    }
+
+    public function change_password($user_id, $new_password) {
+        $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
+        $data = array('password' => $hashed_password);
+        $this->db->where('id', $user_id);
+        return $this->db->update('Users', $data);
+    }
+
+    public function get_all_users() {
+        $query = $this->db->get('Users');
+        $users = $query->result_array();
     
+        return $users;
+    }
+
+    public function delete_user($user_id) {
+        $this->db->where('id', $user_id);
+        return $this->db->delete('Users');
+    }
+
+    // Add more user-related functions as needed
+
 }
